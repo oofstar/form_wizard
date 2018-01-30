@@ -14,6 +14,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    if @user.fave_color = "Other"
+      @user.fave_color = @user.other_color
+    end 
+
+
     if @user.save
       redirect_to @user, notice: "User Successfully Added!"
     else
@@ -23,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :age, :height_feet, :height_inches, :weight, :fave_color)
+    params.require(:user).permit(:first_name, :last_name, :email, :age, :height_feet, :height_inches, :weight, :fave_color, :other_color)
   end
 
 end

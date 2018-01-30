@@ -20,5 +20,8 @@ $(document).ready(function(){
         if($("#user_fave_color").val() == "Other"){
           $(".hidden_option").fadeIn('fast');
         }
+        if($("#user_fave_color").val() != "Other"){
+          $(".hidden_option").fadeOut('fast');
+        }
     });
 });

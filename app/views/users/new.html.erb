@@ -18,15 +18,17 @@
     <%= f.collection_select(:height_feet, [[1],[2],[3],[4],[5],[6],[7],[8]], :first, :first, include_blank: true) %><br>
 
     <%= f.label :height_inches %>
-    <%= f.collection_select(:height_inches, [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11]], :first, :first, include_blank: true) %><br>
+    <%= f.collection_select(:height_inches, [[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11]], :first, :first, include_blank: true) %><br>
 
     <%= f.label :weight %>
     <%= f.text_field :weight %><br>
 
     <%= f.label :fave_color %>
     <%= f.collection_select(:fave_color, [['Red'], ['Orange'], ['Yellow'], ['Green'],['Blue'],['Purple'],['Other']], :first, :first, include_blank: true) %><br>
-    <label class="hidden_option">Please specify:</label>
-    <input type="text" name="user[fave_color]" class="hidden_option" />
+
+    <%= f.label :other_color, 'Please Specify', class: 'hidden_option' %>
+    <%= f.text_field :other_color, class: 'hidden_option' %>
+    <br>
 
     <%= f.submit "Submit Information" %>
 
