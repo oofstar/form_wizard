@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'email_address'
 gem 'dependent-fields-rails'
 gem 'jquery-rails'
+gem 'wicked'
 
 group :development do
   gem 'listen', '~> 3.0.5'
