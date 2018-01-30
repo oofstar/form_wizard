@@ -1,0 +1,33 @@
+<h1>Welcome to the Wizard!</h1>
+
+<p>Create a User Profile:</p>
+  <%= form_for @user do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+
+    <%= f.label :age %>
+    <%= f.collection_select(:age, [['17 or younger'], ['18 - 26'], ['26 - 35'], ['36 - 45'],['46 or older']], :first, :first, include_blank: true) %><br>
+
+    <%= f.label :height_feet %>
+    <%= f.collection_select(:height_feet, [[1],[2],[3],[4],[5],[6],[7],[8]], :first, :first, include_blank: true) %><br>
+
+    <%= f.label :height_inches %>
+    <%= f.collection_select(:height_inches, [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11]], :first, :first, include_blank: true) %><br>
+
+    <%= f.label :weight %>
+    <%= f.text_field :weight %><br>
+
+    <%= f.label :fave_color %>
+    <%= f.collection_select(:fave_color, [['Red'], ['Orange'], ['Yellow'], ['Green'],['Blue'],['Purple'],['Other']], :first, :first, include_blank: true) %><br>
+    <label class="hidden_option">Please specify:</label>
+    <input type="text" name="user[fave_color]" class="hidden_option" />
+
+    <%= f.submit "Submit Information" %>
+
+  <% end %>

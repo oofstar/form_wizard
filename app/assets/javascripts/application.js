@@ -10,5 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+
 //= require rails-ujs
 //= require_tree .
+
+$(document).ready(function(){
+    $("#user_fave_color").change(function(){
+        if($("#user_fave_color").val() == "Other"){
+          $(".hidden_option").fadeIn('fast');
+        }
+    });
+});
